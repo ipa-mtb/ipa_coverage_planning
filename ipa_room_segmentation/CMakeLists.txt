@@ -94,17 +94,18 @@ add_library(${PROJECT_NAME}
 	common/src/room_class.cpp
 	common/src/voronoi_random_field_segmentation.cpp
 	common/src/clique_class.cpp
-	common/src/voronoi_random_field_features.cpp
-)
+	common/src/cv_boost_loader.cpp
+	common/src/voronoi_random_field_features.cpp)
+
 target_link_libraries(${PROJECT_NAME}
 	${catkin_LIBRARIES}
 	${OpenCV_LIBRARIES}
 	${Boost_LIBRARIES}
-)
+  )
 add_dependencies(${PROJECT_NAME}
 	${catkin_EXPORTED_TARGETS}
 	${${PROJECT_NAME}_EXPORTED_TARGETS}
-)
+  )
 
 ### segmentation action server: see room_segmentation_action_server_params.yaml to change the used method
 add_executable(room_segmentation_server
