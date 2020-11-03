@@ -97,6 +97,7 @@ add_library(${PROJECT_NAME} STATIC
 	common/src/cv_boost_loader.cpp
 	common/src/voronoi_random_field_features.cpp
 )
+set_property(TARGET ${PROJECT_NAME} PROPERTY POSITION_INDEPENDENT_CODE ON)
 target_link_libraries(${PROJECT_NAME}
 	${catkin_LIBRARIES}
 	${OpenCV_LIBRARIES}
